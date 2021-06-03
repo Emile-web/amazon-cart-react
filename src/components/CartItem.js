@@ -1,24 +1,24 @@
 import React from 'react'
 import './CartItem.css'
 
-function CartItem() {
+function CartItem({title, stock, image, price, quantity}) {
     return (
         <div className="CartItem">
 
             <div className="CartItem-image">
-              <img alt="" src="https://www.cdiscount.com/pdt2/n/f/a/1/700x700/mtfp2nfa/rw/ipad-pro-12-9-retina-512go-wifi-gris-sideral.jpg" />
+              <img alt="" src={process.env.PUBLIC_URL + '/items/' + image} />
             </div>
 
             <div className="CartItem-info">
               <div className="info-title">
-                <h2>Apple Ipad Pro</h2>
+                <h2>{title}</h2>
               </div>
               <div className="info-stock">
-                In stock
+                {stock}
               </div>
               <div className="item-actions">
                 <div className="item-quantity">
-                  <select>
+                  <select value={quantity}>
                     <option value="1">Qty: 1</option>
                     <option value="2">Qty: 2</option>
                     <option value="3">Qty: 3</option>
@@ -32,7 +32,7 @@ function CartItem() {
             </div>
 
             <div className="CartItem-price">
-                $769.00
+                ${price}
             </div>
           </div>
     )

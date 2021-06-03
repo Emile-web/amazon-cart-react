@@ -8,7 +8,17 @@ function CartItems({items}) {
           <h1>Shopping Cart</h1>
           <hr />
           <div className="CartItems-items">
-            <CartItem />
+            {
+              items.map(item => 
+                <CartItem 
+                  title = {item.title}
+                  stock = {item.stock}
+                  image = {item.image}
+                  price = {item.price}
+                  quantity = {item.quantity}
+                />  
+              )
+            }
           </div>
         </div>
     )
